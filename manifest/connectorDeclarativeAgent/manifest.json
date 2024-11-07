@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+  "version": "1.0.0",
+  "manifestVersion": "1.19",
+  "id": "b05823eb-0077-405f-8af3-d3ca3c67b01d",
+  "name": {
+    "short": "IT ヘルプデスク コネクタ エージェント",
+    "full": "IT ヘルプデスク検索 Graph コネクタ宣言型エージェント"
+  },
+  "developer": {
+    "name": "karamem0",
+    "mpnId": "",
+    "websiteUrl": "https://github.com/karamem0/japan-m365-community-conference-2024",
+    "privacyUrl": "https://github.com/karamem0/japan-m365-community-conference-2024",
+    "termsOfUseUrl": "https://github.com/karamem0/japan-m365-community-conference-2024"
+  },
+  "description": {
+    "short": "IT ヘルプデスクの FAQ (よくある質問) を検索します。",
+    "full": "IT ヘルプデスクの FAQ (よくある質問) を検索します。FAQ にはアカウント管理、ソフトウェア、ハードウェア、ネットワーク、セキュリティに関する情報が含まれます。"
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#FFFFFF",
+  "copilotAgents": {
+    "declarativeAgents": [
+      {
+        "id": "2bc22449-8b28-4b12-a6f3-19d4fd66a10d",
+        "file": "declarativeAgent.json"
+      }
+    ]
+  },
+  "validDomains": []
+}

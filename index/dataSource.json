@@ -1,0 +1,14 @@
+{
+  "name": "faq",
+  "type": "azuresql",
+  "credentials": {
+    "connectionString": ""
+  },
+  "container": {
+    "name": "[FaqView]"
+  },
+  "dataChangeDetectionPolicy": {
+    "@odata.type": "#Microsoft.Azure.Search.HighWaterMarkChangeDetectionPolicy",
+    "highWaterMarkColumnName": "RowVersion"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+  "version": "1.0.0",
+  "manifestVersion": "1.19",
+  "id": "a31be7e1-0b1a-4fbd-ad38-0a885be0e5ac",
+  "name": {
+    "short": "IT ヘルプデスク プラグイン",
+    "full": "IT ヘルプデスク検索 Teams メッセージ拡張機能プラグイン"
+  },
+  "developer": {
+    "name": "karamem0",
+    "mpnId": "",
+    "websiteUrl": "https://github.com/karamem0/japan-m365-community-conference-2024",
+    "privacyUrl": "https://github.com/karamem0/japan-m365-community-conference-2024",
+    "termsOfUseUrl": "https://github.com/karamem0/japan-m365-community-conference-2024"
+  },
+  "description": {
+    "short": "IT ヘルプデスクの FAQ (よくある質問) を検索します。",
+    "full": "IT ヘルプデスクの FAQ (よくある質問) を検索します。FAQ にはアカウント管理、ソフトウェア、ハードウェア、ネットワーク、セキュリティに関する情報が含まれます。"
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#FFFFFF",
+  "composeExtensions": [
+    {
+      "botId": "",
+      "composeExtensionType": "botBased",
+      "commands": [
+        {
+          "id": "42f8f7b0-6341-4c12-98aa-869053553706",
+          "type": "query",
+          "title": "IT ヘルプデスク",
+          "description": "IT ヘルプデスクの FAQ (よくある質問) をキーワードで検索します。",
+          "context": [
+            "compose"
+          ],
+          "parameters": [
+            {
+              "name": "query",
+              "title": "クエリ",
+              "description": "検索クエリを入力してください。",
+              "inputType": "text"
+            }
+          ]
+        }
+      ],
+      "canUpdateConfiguration": false
+    }
+  ],
+  "validDomains": []
+}

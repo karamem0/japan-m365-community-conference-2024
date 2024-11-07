@@ -1,0 +1,102 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
+  "schema_version": "v2.1",
+  "name_for_human": "IT ヘルプデスク",
+  "description_for_human": "IT ヘルプデスクの FAQ (よくある質問) を検索します。",
+  "namespace": "jpm365cc2024",
+  "functions": [
+    {
+      "name": "search",
+      "description": "IT ヘルプデスクの FAQ (よくある質問) を検索します。",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.question",
+            "subtitle": "$.url"
+          },
+          "static_template": {
+            "type": "AdaptiveCard",
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "version": "1.5",
+            "body": [
+              {
+                "$data": "${value}",
+                "type": "ColumnSet",
+                "columns": [
+                  {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                      {
+                        "type": "Image",
+                        "url": "https://res.cdn.office.net/midgard/versionless/defaultmrticon.png",
+                        "altText": "Thumbnail",
+                        "horizontalAlignment": "center",
+                        "size": "small"
+                      }
+                    ],
+                    "horizontalAlignment": "center"
+                  },
+                  {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                      {
+                        "type": "TextBlock",
+                        "text": "[${question}](${url})",
+                        "weight": "bolder",
+                        "color": "accent",
+                        "size": "medium",
+                        "maxLines": 1
+                      },
+                      {
+                        "type": "TextBlock",
+                        "text": "${formatDateTime(updated, 'yyyy/MM/dd HH:mm')}",
+                        "size": "small",
+                        "spacing": "small",
+                        "maxLines": 1,
+                        "$when": "${updated!=''}"
+                      },
+                      {
+                        "type": "TextBlock",
+                        "text": "[${url}](${url})",
+                        "weight": "bolder",
+                        "size": "small",
+                        "spacing": "small",
+                        "maxLines": 1,
+                        "$when": "${url!=''}"
+                      },
+                      {
+                        "type": "TextBlock",
+                        "text": "${answer}",
+                        "maxLines": 3,
+                        "wrap": true
+                      }
+                    ],
+                    "spacing": "medium"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": {
+        "type": "ApiKeyPluginVault",
+        "reference_id": ""
+      },
+      "spec": {
+        "url": "swagger.json"
+      },
+      "run_for_functions": [
+        "search"
+      ]
+    }
+  ]
+}

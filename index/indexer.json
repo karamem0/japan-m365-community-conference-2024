@@ -1,0 +1,16 @@
+{
+  "name": "faq",
+  "dataSourceName": "faq",
+  "skillsetName": "faq",
+  "targetIndexName": "faq",
+  "schedule": {
+    "interval": "P1D",
+    "startTime": "2000-01-01T00:00:00Z"
+  },
+  "outputFieldMappings": [
+    {
+      "sourceFieldName": "/document/embedding/*",
+      "targetFieldName": "question_vector"
+    }
+  ]
+}
